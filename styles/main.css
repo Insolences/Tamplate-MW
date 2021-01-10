@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5{
     background: var(--default-background);
 }
 
-.form-container{
+.reg-container{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -41,8 +41,15 @@ h1, h2, h3, h4, h5{
     background: #FFFFFF;
 }
 
+.reg-container-final{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 454px 319px;
+    background: #FFFFFF;
+}
+
 .logo{
-    margin-top: 24px;
     margin-bottom: 80px;
     align-self: center;
     justify-self: center;
@@ -54,20 +61,20 @@ h1, h2, h3, h4, h5{
     width: 496px;
 }
 
-.form-h2{
+.reg-h2{
     position: relative;
 }
 
-.form-text{
+.reg-text{
     margin: 16px 0 28px;
 }
 
-.form-text a{
+.reg-text a{
     color: #f81f1f;
     font-weight: bold;
 }
 
-.form-container h2{
+.reg-container h2{
     font-weight: bold;
     font-size: 32px;
     line-height: 120%;
@@ -75,7 +82,16 @@ h1, h2, h3, h4, h5{
     z-index: 1;
 }
 
-.form-container p{
+.reg-container-final h3{
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+    position: relative;
+    z-index: 1;
+}
+
+.reg-container p, .reg-container-final p{
     font-size: 16px;
     line-height: 150%;
 }
@@ -86,6 +102,16 @@ h1, h2, h3, h4, h5{
     background: var(--rectangl-line);
     z-index: 0;
     left: 52px;
+    position: absolute;
+    bottom: 5px;
+}
+
+.rectangl-line-final{
+    width: 134px;
+    height: 12px;
+    background: var(--rectangl-line);
+    z-index: 0;
+    left: 123px;
     position: absolute;
     bottom: 5px;
 }
@@ -179,6 +205,7 @@ h1, h2, h3, h4, h5{
 }
 
 /*-----------------------[ Input ]----------------------------------------*/
+
 input {
     outline: none;
     border: none;
