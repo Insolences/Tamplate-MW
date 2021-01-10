@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Registration step 1</title>
     <link href="../styles/main.css" rel="stylesheet" type="text/css">
+    <link href="../styles/modal.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -29,12 +30,16 @@
                     <input id="phone-input" class="inputField" type="number" name="Phone" placeholder="Phone number...">
                     <span class="focus-input100"></span>
                 </div>
-                <div class="form-input100-m28 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                <div class="form-input100-m28 validate-input">
                     <span class="label-input100">Password</span>
                     <input id="password-input" class="inputField" type="password" name="Password" placeholder="Password...">
                     <span class="focus-input100"></span>
                 </div>
-                <div class="reg-container-buttons">
+                <div class="accept-privacy-container">
+                    <input type="checkbox" id="acceptPrivacy"  class="inputCheck" name="AcceptPrivacy">
+                    <span>Accept <a href="#" class="open-modal">Privacy Statement</a> and <a href="#" class="open-modal">Terms & Conditions</a></span>
+                </div>
+                <div class="reg-buttons-container">
                     <a href="reg_page_1.html" class="back-to-first-page">Back</a>
                     <input type="submit" class="next-button reg-button" value="Create free account"/>
                 </div>
@@ -59,6 +64,29 @@
             </div>
         </div>
     </div>
+    <div id='modal' class="modal">
+        <img src="../src/img/close-modal.png" class="modal__cross modal-close" />
+        <div class="modal-content">
+            <h3>Privacy Statement</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate sapien nec sagittis aliquam malesuada bibendum. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquet nibh praesent tristique magna sit amet. Convallis aenean et tortor at risus viverra. Tristique sollicitudin nibh sit amet commodo. Integer enim neque volutpat ac tincidunt vitae semper. Rhoncus urna neque viverra justo nec ultrices.</p>
+            <p>Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Tortor posuere ac ut consequat semper viverra. At quis risus sed vulputate odio ut enim blandit.</p>
+            <p>Ornare massa eget egestas purus viverra accumsan. Mattis rhoncus urna neque viverra justo nec. Adipiscing diam donec adipiscing tristique risus nec feugiat. Amet massa vitae tortor condimentum. At varius vel pharetra vel. Porttitor eget dolor morbi non arcu risus quis varius. Id donec ultrices tincidunt arcu. Aliquet enim tortor at auctor urna nunc id cursus. Rhoncus dolor purus non enim praesent elementum facilisis leo.</p>
+            <h4>Amet massa vitae tortor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate sapien nec sagittis aliquam malesuada bibendum. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquet nibh praesent tristique magna sit amet. Convallis aenean et tortor at risus viverra. Tristique sollicitudin nibh sit amet commodo. Integer enim neque volutpat ac tincidunt vitae semper. Rhoncus urna neque viverra justo nec ultrices.</p>
+            <p>Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Tortor posuere ac ut consequat semper viverra. At quis risus sed vulputate odio ut enim blandit.</p>
+            <h4>Amet massa vitae tortor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate sapien nec sagittis aliquam malesuada bibendum. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquet nibh praesent tristique magna sit amet. Convallis aenean et tortor at risus viverra. Tristique sollicitudin nibh sit amet commodo. Integer enim neque volutpat ac tincidunt vitae semper. Rhoncus urna neque viverra justo nec ultrices.</p>
+            <p>Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Tortor posuere ac ut consequat semper viverra. At quis risus sed vulputate odio ut enim blandit.</p>
+            <h4>Amet massa vitae tortor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate sapien nec sagittis aliquam malesuada bibendum. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquet nibh praesent tristique magna sit amet. Convallis aenean et tortor at risus viverra. Tristique sollicitudin nibh sit amet commodo. Integer enim neque volutpat ac tincidunt vitae semper. Rhoncus urna neque viverra justo nec ultrices.</p>
+            <p>Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Tortor posuere ac ut consequat semper viverra. At quis risus sed vulputate odio ut enim blandit.</p>
+            <h4>Amet massa vitae tortor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate sapien nec sagittis aliquam malesuada bibendum. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquet nibh praesent tristique magna sit amet. Convallis aenean et tortor at risus viverra. Tristique sollicitudin nibh sit amet commodo. Integer enim neque volutpat ac tincidunt vitae semper. Rhoncus urna neque viverra justo nec ultrices.</p>
+            <p>Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Tortor posuere ac ut consequat semper viverra. At quis risus sed vulputate odio ut enim blandit.</p>
+        </div>
+         </div>
+    <div class="overlay overlay-modal"></div>
+    <script src="../js/modal.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

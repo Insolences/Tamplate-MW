@@ -31,7 +31,7 @@ const removeValidation = function () {
 
 function checkInput(input){
     const nameReg= /(?=^.{3,20}$)^[A-Z][a-zA-Z0-9]*[._-]?[a-zA-Z0-9]+$/g;
-    const email = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    const email = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/;
     const id = input.id;
     let reg;
 
@@ -42,6 +42,7 @@ function checkInput(input){
         break;
         case 'mail-input': reg = email;
         break;
+
     }
 
     function createAlertText() {
