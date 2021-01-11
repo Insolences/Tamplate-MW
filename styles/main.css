@@ -26,33 +26,51 @@ h1, h2, h3, h4, h5{
 
 .wrapper{
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1360px;
-    height: 768px;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
     background: var(--default-background);
 }
 
 .reg-container{
     display: flex;
+    align-items: center;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 24px 128px 238px 172px;
+    width: 60%;
     background: #FFFFFF;
+    padding-top: 24px;
+}
+
+.reg-content {
+    display: flex;
+    flex-direction: column;
 }
 
 .reg-container-final{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding: 24px 454px 319px;
     background: #FFFFFF;
+}
+
+.reg-container-final .reg-buttons-container{
+    margin-top: 20px;
 }
 
 .logo{
     margin-bottom: 80px;
     align-self: center;
     justify-self: center;
+}
+
+.logo-final{
+    margin-bottom: 0;
+}
+
+.check{
+    margin: 64px 0 40px 0;
 }
 
 .form{
@@ -117,13 +135,18 @@ h1, h2, h3, h4, h5{
 }
 
 .info-container{
-    width: 564px;
+    width: 40%;
     background-image: url('../src/img/background.png');
-    background-position: bottom 12px left -15px;
+    background-position: bottom 160px left -15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 160px;
 }
 
-.info-container{
-    padding: 160px 116px 212px 136px;
+.info-content {
+    display: flex;
+    flex-direction: column;
 }
 
 .info-container h3{
@@ -199,9 +222,15 @@ h1, h2, h3, h4, h5{
 
 .reg-buttons-container{
     display: flex;
+    width: 100%;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-between;
     margin-top: 48px;
+}
+
+.reg-buttons-container .reg-button{
+    margin: 0;
+    padding: 12px 45px;
 }
 
 /*-----------------------[ Input ]----------------------------------------*/
@@ -219,6 +248,19 @@ input {
 .form-input50 {
     width: 232px;
     border-bottom: 2px solid var(--label-color);
+}
+
+.input-container{
+    position: relative;
+}
+
+.input-container-page2{
+    position: relative;
+    margin-top: 24px;
+}
+
+.input-container-page2:first-child{
+    margin-top: 0;
 }
 
 .form-input100-m48{
@@ -286,7 +328,7 @@ input {
     width: 100%;
 }
 
-.next-button{
+.reg-button{
     color: #FFFFFF;
     font-size: 14px;
     line-height: 120%;
@@ -299,9 +341,40 @@ input {
     outline: none;
 }
 
-.reg-button{
+.create-button{
     margin-top: 0;
     padding: 12px 29px;
+}
+
+.becomePro-button{
+    color: #FF004C;
+    font-size: 14px;
+    line-height: 120%;
+    padding: 12px 45px;
+    background-color: #FFF;
+    border: 1px solid #FF004C;
+    box-sizing: border-box;
+    border-radius: 24px;
+    align-self: flex-end;
+    outline: none;
+}
+
+.reg-button a, .create-button a{
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 120%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.becomePro-button a{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 120%;
+    text-align: center;
+    color: #FF004C;
+    text-decoration: none;
 }
 
 .back-to-first-page{
@@ -310,6 +383,10 @@ input {
     line-height: 120%;
     text-decoration-line: underline;
     color: var(--label-color);
+}
+
+.thank-button-container{
+    display: flex;
 }
 
 /*-----------------------[ Alert validate ]---------------------------*/
@@ -355,9 +432,14 @@ input {
     font-size: 12px;
     line-height: 150%;
     color: #FF1E1E;
+    display: none;
     position: absolute;
     right: 0;
     bottom: -24px;
+}
+
+.error-text.show {
+    display: block;
 }
 
 .error-validate{
@@ -369,25 +451,37 @@ input {
     opacity: 1;
 }
 
-/*@media (max-width: 992px) {*/
-/*    .alert-validate::before {*/
-/*        visibility: visible;*/
-/*        opacity: 1;*/
-/*    }*/
-/*}*/
+.check-validate{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 36px;
+    width: 13px;
+    height: 10px;
+}
 
 .true-validate::after {
-    content: "\f26b";
+    content: "";
     font-size: 22px;
+    width: 13px;
+    height: 10px;
     color: #00ad5f;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("../src/img/validate.png");
     position: absolute;
-    bottom: calc((100% - 25px) / 2);
-    transform: translateY(50%);
+    bottom: 14px;
     right: 5px;
 }
 
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
 
