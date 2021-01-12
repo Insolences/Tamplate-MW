@@ -32,6 +32,14 @@ h1, h2, h3, h4, h5{
     background: var(--default-background);
 }
 
+
+@media all and (max-width: 900px){
+    .wrapper{
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
 .reg-container{
     display: flex;
     align-items: center;
@@ -41,18 +49,38 @@ h1, h2, h3, h4, h5{
     padding-top: 24px;
 }
 
+@media all and (max-width: 900px){
+    .reg-container {
+        width: 100%;
+    }
+}
+
 .reg-content {
     display: flex;
     flex-direction: column;
+    max-width: 496px;
 }
 
 .reg-container-final{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 24px 454px 319px;
+    padding-top: 24px;
+    width: 100%;
     background: #FFFFFF;
+}
+
+.reg-content-final {
+    display: flex;
+    padding: 0 33px 0 40px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 452px;
+}
+
+.reg-content-final p{
+    text-align: center;
 }
 
 .reg-container-final .reg-buttons-container{
@@ -67,16 +95,20 @@ h1, h2, h3, h4, h5{
 
 .logo-final{
     margin-bottom: 0;
+    align-self: center;
+    justify-self: center;
 }
 
 .check{
     margin: 64px 0 40px 0;
+    align-self: center;
+    justify-self: center;
 }
 
 .form{
     display: flex;
     flex-direction: column;
-    width: 496px;
+    max-width: 496px;
 }
 
 .reg-h2{
@@ -86,6 +118,13 @@ h1, h2, h3, h4, h5{
 .reg-text{
     margin: 16px 0 28px;
 }
+
+@media all and (max-width: 900px){
+    .reg-text{
+        margin: 16px 0 0;
+    }
+}
+
 
 .reg-text a{
     color: #f81f1f;
@@ -144,6 +183,13 @@ h1, h2, h3, h4, h5{
     padding-top: 160px;
 }
 
+@media all and (max-width: 900px){
+    .info-container {
+        width: 100%;
+        padding: 63px 0 240px 0;
+    }
+}
+
 .info-content {
     display: flex;
     flex-direction: column;
@@ -157,15 +203,15 @@ h1, h2, h3, h4, h5{
 }
 
 .info-container p{
-    margin-left: 28px;
+
     margin-bottom: 16px;
     font-size: 16px;
     line-height: 150%;
     position: relative;
 }
 
-.info-container p:last-child{
-    margin-left: 0;
+.info-p-vector{
+    margin-left: 28px;
 }
 
 .info-p-vector:before{
@@ -201,7 +247,6 @@ h1, h2, h3, h4, h5{
 .accept-privacy-container{
     display: flex;
     align-items: center;
-    margin-top: 24px;
     color: var(--label-color);
     font-size: 14px;
     line-height: 150%;
@@ -215,17 +260,18 @@ h1, h2, h3, h4, h5{
     margin-left: 8px;
 }
 
-.inputCheck{
-    width: 16px;
-    height: 16px;
-}
-
 .reg-buttons-container{
     display: flex;
     width: 100%;
     justify-content: space-around;
     align-items: center;
     margin-top: 48px;
+}
+
+@media all and (max-width: 900px){
+    .reg-buttons-container{
+        margin: 48px 0;
+    }
 }
 
 .reg-buttons-container .reg-button{
@@ -245,17 +291,43 @@ input {
     justify-content: space-between;
 }
 
+@media all and (max-width: 900px){
+    .input-full-name {
+        flex-wrap: wrap;
+    }
+}
+
 .form-input50 {
     width: 232px;
     border-bottom: 2px solid var(--label-color);
 }
 
+@media all and (max-width: 900px){
+    .form-input50 {
+        width: 100%;
+    }
+}
+
 .input-container{
     position: relative;
 }
+@media all and (max-width: 900px){
+    .input-container {
+        width: 100%;
+        margin: 37px 0 0;
+    }
+}
 
-.input-container-page2{
-    position: relative;
+@media all and (max-width: 900px){
+    .input-full-name .input-container {
+        width: 100%;
+        margin: 30px 0 0;
+    }
+}
+
+
+
+.validate-form-page2 .input-container{
     margin-top: 24px;
 }
 
@@ -268,6 +340,12 @@ input {
     position: relative;
     margin-top: 48px;
     border-bottom: 2px solid var(--label-color);
+}
+
+@media all and (max-width: 900px){
+    .form-input100-m48 {
+        margin-top: 0;
+    }
 }
 
 .form-input100-m28{
@@ -296,6 +374,11 @@ input {
     line-height: 150%;
     color: var(--input-field-text);
     padding: 2px 2px 6px;
+}
+
+.inputCheck{
+    width: 16px;
+    height: 16px;
 }
 
 .focus-input100 {
@@ -339,6 +422,13 @@ input {
     border: none;
     align-self: flex-end;
     outline: none;
+}
+
+@media all and (max-width: 900px){
+    .reg-button {
+        align-self: center;
+        margin-bottom: 56px
+    }
 }
 
 .create-button{
@@ -446,9 +536,8 @@ input {
     border-bottom: 2px solid #FF1E1E;
 }
 
-.alert-validate:hover:before {
-    visibility: visible;
-    opacity: 1;
+.error-validate:last-child{
+    border-bottom: 2px  solid white;
 }
 
 .check-validate{
@@ -482,6 +571,6 @@ textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
 }
 

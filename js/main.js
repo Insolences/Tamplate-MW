@@ -1,98 +1,80 @@
-'use strict'
+form('.validate-form-page1', '/Tamplate-MW/pages/registration_page_2.html');
+form('.validate-form-page2', '/Tamplate-MW/pages/Thank_you_page.html');
 
-const form1 = document.querySelector('.validate-form-page1')
-const form2= document.querySelector('.validate-form-page2')
-console.log(form2)
-const fields1 = form1.querySelectorAll('.inputField')
-const fields2 = form2.querySelectorAll('.inputField')
-const firstName = document.querySelector('#first-name-input')
-const lastName = document.querySelector('#last-name-input')
-const mail = document.querySelector('#mail-input')
-const company = document.querySelector('#company-input')
-const phone = document.querySelector('#phone-input')
-const password = document.querySelector('#password-input')
-
-const inputs = document.querySelectorAll('input:not([type="submit"])');
-
-for (let i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener('keyup', function() {
-        checkInput(inputs[i].name, inputs[i].value) ? removeError(inputs[i]) : removeCheckImg(inputs[i]);
-    });
-}
-
-function checkInput(name, value){
+function checkInput(input){
     const nameReg= /\b([a-z]+[ ]*)+/g;
+    const onlyNumber = /^[0-9()\-+ ]+$/;
     const email = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/;
+    let check = false;
     let reg;
+    let {type, value} = input;
 
-    switch (name) {
-        case 'FirstName':
-        case 'LastName':
+    switch (type) {
+        case 'text':
+        case 'password':
             reg = nameReg;
             break;
-        case 'Email': reg = email;
+        case 'email': reg = email;
             break;
+        case 'tel': reg = onlyNumber;
+            break;
+        case 'checkbox': check = testCheck(input);
     }
-
-    return reg.test(value) && value.length > 3;
+console.log(input.checked)
+    return  value.length > 3  && (check || reg.test(value));
 }
 
 const removeError = function (input) {
-    let error = input.parentNode.parentNode.querySelector('.error-text')
-    console.log(error)
-    let checkValidate = input.parentNode.parentNode.querySelector('.focus-input100')
+    let error = input.closest('.input-container').querySelector('.error-text')
+    let checkValidate = input.closest('.validate-input').querySelector('.focus-input100')
     input.parentElement.classList.remove('error-validate')
     error.classList.remove('show')
     checkValidate.classList.add('true-validate')
 }
 
-const removeCheckImg = function (input) {
-    input.parentNode.parentNode.querySelector('.focus-input100').classList.remove('true-validate')
+function removeCheckImg (input) {
+    input.closest('.validate-input').querySelector('.focus-input100').classList.remove('true-validate')
 }
 
+function validateInput (fields) {
+    for (let i = 0; i < fields.length; i++) {
+        fields[i].addEventListener('keyup', function() {
+            checkInput(fields[i]) ? removeError(fields[i]) : removeCheckImg(fields[i]);
+        });
+    }
+}
 
+function form(selector, redirect) {
+    const form = document.querySelector(selector)
+    if (!form) {
+        return;
+    }
 
-form1.addEventListener('submit', function (event) {
-    event.preventDefault()
-    for (let i = 0; i < fields1.length; i++) {
-        if (!fields1[i].value) {
-            let error = document.querySelectorAll('.error-text')
-            error[i].classList.add('show')
-            form1[i].parentElement.classList.add('error-validate')
+    const fields = form.querySelectorAll('.inputField');
+
+    validateInput(fields)
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault()
+        let user = {}
+        let isValid = true;
+        for (let i = 0; i < fields.length; i++) {
+            if (!fields[i].checked || !fields[i].value) {
+                fields[i].closest('.input-container').querySelector('.error-text').classList.add('show')
+                console.log('fields[i]: ',fields[i])
+                form[i].parentElement.classList.add('error-validate')
+            }
+            isValid &= checkInput(fields[i]);
+            user[fields[i].name] = fields[i].value
         }
-    }
 
-    const user = {
-        lastName: lastName.value,
-        firstName: firstName.value,
-        mail: mail.value
-    };
-
-    if(checkInput('FirstName', firstName.value) && checkInput('LastName', lastName.value) && checkInput('Email', mail.value)) {
-        window.location.href = '/Tamplate-MW/pages/reg_page_2.html';
-    }
-    console.log('user info: ', user)
-})
-
-form2.addEventListener('submit', function (event) {
-    event.preventDefault()
-    for (let i = 0; i < fields2.length; i++) {
-        if (!fields2[i].value) {
-            let error = document.querySelectorAll('.error-text')
-            error[i].classList.add('show')
-            form2[i].parentElement.classList.add('error-validate')
+        if(isValid) {
+            window.location.href = redirect;
         }
-    }
+    })
+}
 
-    const user = {
-        company: company.value,
-        phone: phone.value,
-        password: password.value
-    };
-
-    if(checkInput('Company', company.value) && checkInput('Phone', phone.value) && checkInput('Password', password.value)) {
-        window.location.href = '/Tamplate-MW/pages/Thank_you_page.html';
-    }
-    console.log('user info: ', user)
-})
-
+function testCheck(input) {
+    let checkbox = document.getElementById('acceptPrivacy')
+    checkbox.checked ? removeError(input) : input.closest('.input-container').querySelector('.error-text').classList.add('show')
+}

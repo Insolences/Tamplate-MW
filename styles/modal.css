@@ -29,12 +29,26 @@
     transition: 0.3s all;
 }
 
+@media all and (max-width: 900px){
+    .modal{
+        max-width: 90%;
+        height: 95%;
+    }
+}
+
 .modal-content{
     text-align: start;
     padding: 0 60px 0 64px;
     margin: 54px 0 25px 0;
     overflow: auto;
-    height: 700px;
+    height: 76vh;
+}
+
+@media all and (max-width: 900px){
+    .modal-content{
+        padding: 0 34px 0 37px;
+        height: 92%;
+    }
 }
 
 .modal-content h3{
