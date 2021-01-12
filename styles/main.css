@@ -528,16 +528,22 @@ input {
     bottom: -24px;
 }
 
+.error-check-text{
+    font-size: 12px;
+    line-height: 150%;
+    color: #FF1E1E;
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: -24px;
+}
+
 .error-text.show {
     display: block;
 }
 
 .error-validate{
     border-bottom: 2px solid #FF1E1E;
-}
-
-.error-validate:last-child{
-    border-bottom: 2px  solid white;
 }
 
 .check-validate{
