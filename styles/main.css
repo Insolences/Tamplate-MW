@@ -32,14 +32,6 @@ h1, h2, h3, h4, h5{
     background: var(--default-background);
 }
 
-
-@media all and (max-width: 900px){
-    .wrapper{
-        flex-direction: column;
-        height: 100%;
-    }
-}
-
 .reg-container{
     display: flex;
     align-items: center;
@@ -49,11 +41,6 @@ h1, h2, h3, h4, h5{
     padding-top: 24px;
 }
 
-@media all and (max-width: 900px){
-    .reg-container {
-        width: 100%;
-    }
-}
 
 .reg-content {
     display: flex;
@@ -119,13 +106,6 @@ h1, h2, h3, h4, h5{
     margin: 16px 0 28px;
 }
 
-@media all and (max-width: 900px){
-    .reg-text{
-        margin: 16px 0 0;
-    }
-}
-
-
 .reg-text a{
     color: #f81f1f;
     font-weight: bold;
@@ -181,13 +161,6 @@ h1, h2, h3, h4, h5{
     flex-direction: column;
     align-items: center;
     padding-top: 160px;
-}
-
-@media all and (max-width: 900px){
-    .info-container {
-        width: 100%;
-        padding: 63px 0 240px 0;
-    }
 }
 
 .info-content {
@@ -262,20 +235,15 @@ h1, h2, h3, h4, h5{
 
 .reg-buttons-container{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    margin-top: 48px;
-}
-
-@media all and (max-width: 900px){
-    .reg-buttons-container{
-        margin: 48px 0;
-    }
+    margin: 12px 0;
 }
 
 .reg-buttons-container .reg-button{
-    margin: 0;
+    margin-top: 15px;
     padding: 12px 45px;
 }
 
@@ -291,41 +259,14 @@ input {
     justify-content: space-between;
 }
 
-@media all and (max-width: 900px){
-    .input-full-name {
-        flex-wrap: wrap;
-    }
-}
-
 .form-input50 {
     width: 232px;
     border-bottom: 2px solid var(--label-color);
 }
 
-@media all and (max-width: 900px){
-    .form-input50 {
-        width: 100%;
-    }
-}
-
 .input-container{
     position: relative;
 }
-@media all and (max-width: 900px){
-    .input-container {
-        width: 100%;
-        margin: 37px 0 0;
-    }
-}
-
-@media all and (max-width: 900px){
-    .input-full-name .input-container {
-        width: 100%;
-        margin: 30px 0 0;
-    }
-}
-
-
 
 .validate-form-page2 .input-container{
     margin-top: 24px;
@@ -340,12 +281,6 @@ input {
     position: relative;
     margin-top: 48px;
     border-bottom: 2px solid var(--label-color);
-}
-
-@media all and (max-width: 900px){
-    .form-input100-m48 {
-        margin-top: 0;
-    }
 }
 
 .form-input100-m28{
@@ -424,12 +359,6 @@ input {
     outline: none;
 }
 
-@media all and (max-width: 900px){
-    .reg-button {
-        align-self: center;
-        margin-bottom: 56px
-    }
-}
 
 .create-button{
     margin-top: 0;
@@ -580,3 +509,42 @@ select:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
 }
 
+@media (max-width: 900px){
+    .wrapper{
+        flex-direction: column;
+        height: 100%;
+    }
+    .reg-button {
+        align-self: center;
+    }
+    .reg-container {
+        width: 100%;
+    }
+    .reg-text{
+        margin: 16px 0 0;
+    }
+    .info-container {
+        width: 100%;
+        padding: 63px 0 240px 0;
+    }
+    /*.reg-buttons-container{*/
+    /*    margin: 48px 0;*/
+    /*}*/
+    .input-full-name {
+        flex-wrap: wrap;
+    }
+    .form-input50 {
+        width: 100%;
+    }
+    .input-container {
+        width: 100%;
+        margin: 37px 0 0;
+    }
+    .input-full-name .input-container {
+        width: 100%;
+        margin: 30px 0 0;
+    }
+    .form-input100-m48 {
+        margin-top: 0;
+    }
+}
