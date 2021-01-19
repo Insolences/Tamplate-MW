@@ -33,7 +33,7 @@ const removeError = function (input) {
     checkValidate.classList.add('true-validate');
 }
 
-const  testCheck = function (input) {
+const testCheck = function (input) {
     let error = input.closest('.input-container').querySelector('.error-text');
     input.parentElement.classList.remove('error-validate');
     error.classList.remove('show');
@@ -51,7 +51,9 @@ function validateInput (fields) {
     }
 }
 
-document.querySelector('#acceptPrivacy').addEventListener('change', function (event){
+const acceptPrivacy = document.querySelector('#acceptPrivacy')
+
+acceptPrivacy.addEventListener('change', function (event){
     this.checked ? testCheck(this) : removeCheckImg(this);
 })
 
